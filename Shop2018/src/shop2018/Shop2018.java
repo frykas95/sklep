@@ -16,12 +16,12 @@ public class Shop2018 {
     
    
     public static void main(String[] args) {
-        Produkt chleb = new Produkt("chleb",new BigDecimal("1.8"));
-        Produkt cukier = new Produkt("cukier",new BigDecimal("3.2"));
-        Produkt olej = new Produkt("olej",new BigDecimal("4.2"));
-        Produkt maka = new Produkt("maka",new BigDecimal("2.2"));
+        Product chleb = new Product("chleb",new BigDecimal("1.8"));
+        Product cukier = new Product("cukier",new BigDecimal("3.2"));
+        Product olej = new Product("olej",new BigDecimal("4.2"));
+        Product maka = new Product("maka",new BigDecimal("2.2"));
         
-        Koszyk koszyk = new Koszyk();
+        Cart koszyk = new Cart();
         koszyk.dodaj(chleb);
         koszyk.dodaj(cukier);
         koszyk.dodaj(olej);
@@ -29,7 +29,7 @@ public class Shop2018 {
         koszyk.dodaj(maka);
         koszyk.dodaj(maka);
         
-        System.out.println(koszyk.doZaplaty());
+        System.out.println(koszyk.doPay());
         System.out.println(koszyk);
        
         

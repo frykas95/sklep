@@ -12,10 +12,10 @@ import java.util.List;
 import java.util.Map;
 
 
-public class Koszyk {
-    private Map<Produkt,Integer> map = new HashMap();
+public class Cart {
+    private Map<Product,Integer> map = new HashMap();
     
-    public void dodaj(Produkt p)
+    public void dodaj(Product p)
     {
         if(map.containsKey(p))
         {
@@ -28,19 +28,19 @@ public class Koszyk {
             map.put(p,1);
         }
     }   
-    public BigDecimal doZaplaty()
+    public BigDecimal doPay()
     {
         BigDecimal sum = BigDecimal.ZERO;
-        for(Produkt p : map.keySet())
+        for(Product p : map.keySet())
         {
             int ilosc = map.get(p);
-            sum = sum.add(p.getCena().multiply(new BigDecimal(ilosc)));
+            sum = sum.add(p.getPrice().multiply(new BigDecimal(ilosc)));
         }
         return sum;
     }
     
     public String toString()
     {
-        return map.toString()+" "+doZaplaty();
+        return map.toString()+" "+doPay();
     }
 }
