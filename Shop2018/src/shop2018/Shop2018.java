@@ -21,20 +21,21 @@ public class Shop2018 {
         Product olej = new Product("olej",new BigDecimal("4.2"));
         Product maka = new Product("maka",new BigDecimal("2.2"));
         
-        Cart koszyk = new Cart();
-        koszyk.dodaj(chleb);
-        koszyk.dodaj(cukier);
-        koszyk.dodaj(olej);
-        koszyk.dodaj(olej);
-        koszyk.dodaj(maka);
-        koszyk.dodaj(maka);
+        Cart Koszyk = new Cart();
+        Koszyk.add(chleb);
+        Koszyk.add(chleb);
+        Koszyk.add(cukier);
+        Koszyk.add(olej);
         
-        System.out.println(koszyk.doPay());
-        System.out.println(koszyk);
-       
+        System.out.println(Koszyk.toPay());
+        System.out.println(Koszyk);
         
-
+        Warehouse w = new Warehouse();
+        System.out.println(w);
+        w.doOrder(Koszyk);
+        System.out.println(w);
         
     }
+   
     
 }

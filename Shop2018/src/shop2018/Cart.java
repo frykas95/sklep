@@ -28,19 +28,23 @@ public class Cart {
             map.put(p,1);
         }
     }   
-    public BigDecimal doPay()
+    public BigDecimal toPay()
     {
-        BigDecimal sum = BigDecimal.ZERO;
+        BigDecimal suma = BigDecimal.ZERO;
+        //for (produkt p : lista)
         for(Product p : map.keySet())
         {
             int ilosc = map.get(p);
-            sum = sum.add(p.getPrice().multiply(new BigDecimal(ilosc)));
+           //suma=suma.add(p.gCena());
+           suma = suma.add(p.getPrice().multiply(new BigDecimal(ilosc)));
         }
-        return sum;
+        return suma;
     }
     
     public String toString()
     {
-        return map.toString()+" "+doPay();
+        //return lista.toString()+" "+doZaplaty();
+        return map.toString()+" "+toPay();
     }
+    
 }

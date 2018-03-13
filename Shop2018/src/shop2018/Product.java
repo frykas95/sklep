@@ -7,9 +7,10 @@ package shop2018;
 
 import java.math.BigDecimal;
 
-public class Product {
+public class Product implements Comparable<Product> {
     private String name;
     private BigDecimal price;
+    private int count = 100;
 
     public Product(String nazwa, BigDecimal cena) {
         this.name = nazwa;
@@ -28,5 +29,17 @@ public class Product {
     {
         return name + " ("+price+"zł)";
     }
+    public int getCount() {
+        return count;
+    }
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+    @Override
+    public int compareTo(Product second) {
+        return name.compareTo(second.name);
+    }
+    
     
 }
